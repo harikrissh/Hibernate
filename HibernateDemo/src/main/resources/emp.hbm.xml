@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="pojo.Employee" table="Emp">
+		<id name="empNo" column="EmpNo"/>
+		<property name="empName" column="EmpName"/>
+		<property name="empSal" column="EmpSalary" type="java.lang.Float"/>
+	</class>
+	
+	<query name="view records">
+		<![CDATA[from Employee]]>
+	</query>
+	<query name="delete">
+		<![CDATA[delete from Employee where empNo=:no]]>
+	</query>
+</hibernate-mapping>
